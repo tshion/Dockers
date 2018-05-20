@@ -11,6 +11,8 @@ ssh 接続でコンテナにログインするとAngular CLI のコマンドが�
 ### 1. コンテナを立ち上げる
 このソースコードがある場所で、```docker-compose -f docker-compose.yml up -d --build``` を実行する
 
+※あるいは、```sh docker-up.sh``` を実行する
+
 ### 2. コンテナにSSH 接続する
 エンドポイントが違うので、下記の場合でsh ファイルをたたき分けてください
 
@@ -45,6 +47,19 @@ ToolBox | 192.168.99.100:4200
 
 ### 9. コンテナを片付ける
 コマンド```docker-compose -f docker-compose.yml down``` を実行する
+
+※あるいは、```sh docker-down.sh``` を実行する
+
+
+
+## 追加コマンドについて
+### シェルスクリプト
+処理 | ファイル | 備考
+--- | --- | ---
+作業環境を立ち上げる | docker-up.sh | 
+立ち上げた作業環境にSSH 接続する | login.sh | Docker Engine の場合に使用
+立ち上げた作業環境にSSH 接続する | login-tb.sh | Docker Toolbox の場合に使用
+作業環境を片付ける | docker-down.sh | 
 
 
 

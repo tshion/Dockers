@@ -10,5 +10,7 @@ LICENSE
 .vscode
 
 mount
+docker-down.sh
+docker-up.sh
 login.sh
 login-tb.sh
