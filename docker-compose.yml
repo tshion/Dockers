@@ -1,10 +1,12 @@
-version: '2.1'
+version: '3'
 
 services:
   angular-cli:
     build:
       context: ./
       dockerfile: Dockerfile
+      args:
+        VersionAngularCLI: 6.0.3
     volumes:
       - ./mount:/mnt
     ports:

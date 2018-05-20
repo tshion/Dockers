@@ -52,6 +52,16 @@ ToolBox | 192.168.99.100:4200
 
 
 
+## ツールバージョンの指定方法
+Angular CLI のバージョンは、
+docker-compose.yml のbuild > args で定義されている下記の値で指定できます。
+
+変数名 | 用途 | 備考
+--- | --- | ---
+VersionAngularCLI | Angular CLI のバージョン番号 | バージョン情報は[@angular/cli - npm](https://www.npmjs.com/package/@angular/cli) を確認ください
+
+
+
 ## 追加コマンドについて
 ### シェルスクリプト
 処理 | ファイル | 備考
