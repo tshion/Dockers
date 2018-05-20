@@ -39,6 +39,8 @@ Docker 実行環境 | エンドポイント
 Engine | localhost:4200
 ToolBox | 192.168.99.100:4200
 
+※あるいは、カスタムコマンド```my-serve``` を実行する
+
 ### 7. 実行の中断
 ```Ctrl + C``` などのショートカットキーを押して、中断する
 
@@ -70,6 +72,11 @@ VersionAngularCLI | Angular CLI のバージョン番号 | バージョン情報
 立ち上げた作業環境にSSH 接続する | login.sh | Docker Engine の場合に使用
 立ち上げた作業環境にSSH 接続する | login-tb.sh | Docker Toolbox の場合に使用
 作業環境を片付ける | docker-down.sh | 
+
+### カスタムコマンド
+処理 | ファイル | 備考
+--- | --- | ---
+検証環境の立ち上げ | my-serve | ng serve にDocker 環境で動かすための引数を加えたコマンド
 
 
 
