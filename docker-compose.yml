@@ -8,7 +8,7 @@ services:
       args:
         VersionAngularCLI: 6.0.3
     volumes:
-      - ./mount:/mnt
+      - ./_mount:/home/work/mnt
     ports:
       - "20-21:20-21"
       - "2022:22"
