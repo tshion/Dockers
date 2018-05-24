@@ -1,3 +1,4 @@
 #!/bin/sh
 
-docker-compose -f docker-compose.yml up -d --build
+docker build -t angular-cli ./
+docker run --rm -it -p 4200:4200 -v $(pwd)/_mount:/work angular-cli
