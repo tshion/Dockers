@@ -1,4 +1,13 @@
-FROM sickp/alpine-sshd
+ARG VersionNode=8.11.2-alpine
+ARG VersionAngularCLI=6.0.3
 
-RUN apk add --no-cache nodejs && \
-    npm install -g @angular/cli
+FROM node:${VersionNode}
+
+COPY ./command/my-serve /usr/local/bin/my-serve
+RUN npm install -g @angular/cli@${VersionAngularCLI}
+EXPOSE 4200
+
+VOLUME [ "/work" ]
+WORKDIR /work
+
+ENTRYPOINT ["/bin/sh"]
