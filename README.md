@@ -6,7 +6,7 @@ Docker コンテナを起動するとVuePress のコマンドが使えるよう�
 
 ## 使い方
 ```
-docker run --rm -it -p 8080:8080 -v $(pwd)/_mount:/_mount tshion/vuepressondocker:0.12.0
+docker run --rm -it -p 8080:8080 -v $(pwd):/_mount tshion/vuepressondocker:0.12.0
 ```
 
 ※タグ名の指定を忘れずにお願いします。
