@@ -17,7 +17,7 @@ RUN apk add --no-cache \
     python
 
 # Node パッケージの設定
-RUN yarn global add @capacitor/cli@${VersionCapacitor} @capacitor/core@${VersionCapacitor} ionic@${VersionIonic} \
+RUN yarn global add @capacitor/cli@${VersionCapacitor} ionic@${VersionIonic} \
     ## Ionic でYarn の利用を既定値にする
     && ionic config set -g yarn true \
     && ionic config set -g npmClient yarn

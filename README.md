@@ -36,6 +36,5 @@ Capacitor とIonic がインストール済みです。
 
 ## 参考資料
 * [@capacitor/cli  -  npm](https://www.npmjs.com/package/@capacitor/cli)
-* [@capacitor/core  -  npm](https://www.npmjs.com/package/@capacitor/core)
 * [ionic  -  npm](https://www.npmjs.com/package/ionic)
 * [node - Docker Hub](https://hub.docker.com/_/node/)
