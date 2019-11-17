@@ -2,40 +2,37 @@
 Docker コンテナ内でIonic コマンドが使えるイメージの開発リポジトリ
 
 
-## 環境設定
-### コンテナ設定
-Docker コンテナは下記のポートを公開しています。
-
-* 4200: ng e2e
-* 8100: ionic serve
-* 9876: ng test
-* 35729: liveload
-* 53703: dev logger
-
-また作業フォルダーとして```/home/worker``` を追加しています。
-対応させるローカル側の作業フォルダーは```.dockerignore``` に追記してください。
-
-まとめるとコンテナ起動は下記のようなコマンドで実行してください。
+## Quick Start(導入から利用まで)
+### そのままイメージを使う場合
+下記コマンドを実行しDocker コンテナを起動します。
+なお```[tag]``` と表記されている箇所は、利用したいDocker のイメージタグに書き換えてから実行してください。
 
 ``` bash
-docker run --rm -it -p 4200:4200 -p 8100:8100 -p 9876:9876 -p 35729:35729 -p 53703:53703 -v [local path]:/home/worker tshion/ionic-repl:[tag]
+docker run --rm -it -p 4200:4200 -p 8100:8100 -p 9876:9876 -p 35729:35729 -p 53703:53703 -v $(pwd):/home/worker tshion/ionic-repl:[tag]
 ```
 
-コンテナ起動するとずっとユーザー入力を待つ状態になるので、作業が完了したら```exit``` コマンドを実行し、コンテナを停止してください。
+起動が成功するとコマンドを実行したディレクトリが```/home/worker``` にマウントされ、Ionic コマンドが使えるようになります。
+ただしコマンドには制限事項があるので注意が必要です(詳細は"仕様 > 制限事項" を参照してください)
 
-### Ionic 関連の設定
-Capacitor とIonic がインストール済みです。
-またIonic はYarn をデフォルトで使用するように設定しています。
+作業が完了したら```exit``` コマンドを入力するとDocker コンテナが破棄されます。
 
-ただしDocker コンテナ内からホストOS 側のアプリを呼び出せないため一部コマンドに制限があります。
+### ベースイメージとして使う場合
+``` dockerfile
+FROM tshion/ionic-repl:[tag]
+```
 
-* ```cap open```
-* ```ionic serve``` → ```ionic serve --address=0.0.0.0``` にしてホストOS からアクセスして代用します
-* ```ng e2e```
+利用方法等は前述した"そのままイメージを使う場合" と同様ですので省略します。
+注意点は下記となります。
+
+* docker-compose など複数コンテナを併用するのは難しいです
+→ このDocker イメージはコマンド入力を受け付けるようにしているため、それらが無効になるものと相性が悪いです
+→ リモートデスクトップ接続を受け入れる設定もしていないので、起動後に接続するのは難しいと思われます
+* "仕様 > Docker イメージの設定" を確認し、注意深く踏襲してください
 
 
-## 参考資料
-* [@capacitor/cli  -  npm](https://www.npmjs.com/package/@capacitor/cli)
-* [@capacitor/core  -  npm](https://www.npmjs.com/package/@capacitor/core)
-* [ionic  -  npm](https://www.npmjs.com/package/ionic)
-* [node - Docker Hub](https://hub.docker.com/_/node/)
+
+## More Document
+下記にまとめていくので併せてご確認ください。
+
+* [IonicREPLInDocker の使い方](https://mokumokulog.netlify.com/tech/20191117110929)
+* [IonicREPLInDocker の開発について](https://mokumokulog.netlify.com/tech/20191117122300)
