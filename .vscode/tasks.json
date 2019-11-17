@@ -1,0 +1,45 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test Build Docker",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-ionic-repl",
+                "."
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Test Run Docker",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-p",
+                "4200:4200",
+                "-p",
+                "8100:8100",
+                "-p",
+                "9876:9876",
+                "-p",
+                "35729:35729",
+                "-p",
+                "53703:53703",
+                "-v",
+                "${workspaceRoot}/mount:/home/worker",
+                "dev-ionic-repl"
+            ],
+            "dependsOn": [
+                "Test Build Docker"
+            ]
+        }
+    ]
+}
