@@ -8,6 +8,14 @@ ENV VersionCapacitor=1.3.0
 ENV VersionIonic=5.4.6
 
 
+# シェル環境変数の設定
+RUN echo <<EOF > ~/.profile \
+    # ionic serve 時のホストアドレス変更
+    export IONIC_CMDOPTS_SERVE_ADDRESS=0.0.0.0 \
+    # ionic serve 時にブラウザ起動を抑制する
+    export IONIC_CMDOPTS_SERVE_OPEN=0 \
+    EOF
+
 # C++, Python の設定
 # ベースイメージと同じものを採用
 # https://github.com/nodejs/docker-node/blob/f8c22aeb318ec3df876f8271b9b8a86005f0f53d/10/alpine/Dockerfile
@@ -38,4 +46,4 @@ WORKDIR /home/worker
 
 
 # 実行コマンドの設定
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["/bin/sh", "--login"]
