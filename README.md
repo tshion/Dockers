@@ -1,6 +1,6 @@
 # IonicREPLInDocker
 Docker コンテナ内でIonic コマンドが使えるイメージの開発リポジトリ。
-イメージは[Docker Hub](https://hub.docker.com/repository/docker/tshion/ionic-repl) から入手出来ます。
+イメージは[Docker Hub](https://hub.docker.com/r/tshion/ionic-repl) から入手出来ます。
 
 ## Quick Start(導入から利用まで)
 ### そのままイメージを使う場合
