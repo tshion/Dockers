@@ -37,10 +37,9 @@ FROM tshion/ionic-repl:[tag]
 
 ## 補足
 ### 実際の利用例
-[YouTube](https://youtu.be/GDehLx1YTmM) にて公開しています。
-良かったらご覧ください。
+下記にて公開しているので、良かったらご覧ください。
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GDehLx1YTmM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+* [YouTube](https://youtu.be/GDehLx1YTmM)
 
 ### Docker コンテナ内で使えるコマンド一覧
 コマンド | 利用可能かどうか | 備考
