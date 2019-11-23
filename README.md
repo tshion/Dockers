@@ -1,6 +1,6 @@
 # IonicREPLInDocker
 Docker コンテナ内でIonic コマンドが使えるイメージの開発リポジトリ。
-イメージは[Docker Hub](https://hub.docker.com/repository/docker/tshion/ionic-repl) から入手出来ます。
+イメージは[Docker Hub](https://hub.docker.com/r/tshion/ionic-repl) から入手出来ます。
 
 ## Quick Start(導入から利用まで)
 ### そのままイメージを使う場合
@@ -35,7 +35,38 @@ FROM tshion/ionic-repl:[tag]
 
 
 
-## Docker イメージタグのバージョニング
+## 補足
+### 実際の利用例
+下記にて公開しているので、良かったらご覧ください。
+
+* [YouTube](https://youtu.be/GDehLx1YTmM)
+
+### Docker コンテナ内で使えるコマンド一覧
+コマンド | 利用可能かどうか | 備考
+--- | :---: | ---
+```capacitor add```, ```ionic capacitor add``` | △ | android, electron, ios のプロジェクト自体は作成可能
+```capacitor copy```, ```ionic capacitor copy``` | ◯ |  |
+```capacitor open```, ```ionic capacitor open``` | × | Docker イメージ内にAndroid Studio やXcode がないため
+```capacitor run```, ```ionic capacitor run``` | × |  |
+```capacitor sync```, ```ionic capacitor sync``` | △ | ネイティブアプリのコンパイルは出来ないため
+```capacitor update```, ```ionic capacitor update``` | △ | ネイティブアプリのコンパイルは出来ないため
+```ionic build``` | ◯ |  |
+```ionic config get``` | ◯ |  |
+```ionic config set``` | ◯ |  |
+```ionic config unset``` | ◯ |  |
+```ionic docs``` | × | Docker イメージ内のブラウザをホスト側から覗けないため
+```ionic doctor check``` | ◯ |  |
+```ionic doctor list``` | ◯ |  |
+```ionic doctor treat``` | ◯ |  |
+```ionic generate``` | ◯ |  |
+```ionic help``` | ◯ |  |
+```ionic info``` | ◯ |  |
+```ionic integrations enable capacitor``` | ◯ |  |
+```ionic serve``` | ◯ |  |
+```ionic start``` | ◯ |  |
+```ng e2e``` | × | Docker イメージ内にChrome がないため
+
+### Docker イメージタグのバージョニング
 下記のルールで採番します。
 
 ```
