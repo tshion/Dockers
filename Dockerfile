@@ -38,7 +38,7 @@ ENV VersionCapacitor=1.3.0
 ENV VersionIonic=5.4.6
 
 # Node パッケージの設定
-RUN yarn global add @capacitor/cli@${VersionCapacitor} ionic@${VersionIonic} \
+RUN yarn global add @capacitor/cli@${VersionCapacitor} ionic@${VersionIonic} --exact \
     ## Ionic でYarn の利用を既定値にする
     && ionic config set -g yarn true \
     && ionic config set -g npmClient yarn
