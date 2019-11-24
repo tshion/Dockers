@@ -35,7 +35,7 @@ RUN apk add --no-cache \
 ENV VersionCapacitor=1.3.0
 
 # Ionic CLI バージョンの指定
-ENV VersionIonic=5.4.6
+ENV VersionIonic=5.4.8
 
 # Node パッケージの設定
 RUN yarn global add @capacitor/cli@${VersionCapacitor} ionic@${VersionIonic} --exact \
