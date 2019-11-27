@@ -54,6 +54,17 @@ FROM tshion/ionic-repl:[tag]
 ```ionic config get``` | ◯ |  |
 ```ionic config set``` | ◯ |  |
 ```ionic config unset``` | ◯ |  |
+```ionic cordova build``` | △ | ネイティブアプリのコンパイルは出来ないため
+```ionic cordova compile``` | × | ネイティブアプリのコンパイルは出来ないため
+```ionic cordova emulate``` | × |  |
+```ionic cordova platform``` | ◯ |  |
+```ionic cordova platform add``` | △ | android, ios のプロジェクト自体は作成可能
+```ionic cordova platform rm``` | △ | コンテナ内のゴミ箱に行くみたいなので使わない方がいいかも
+```ionic cordova plugin``` | ◯ |  |
+```ionic cordova prepare``` | ◯ |  |
+```ionic cordova requirements``` | ◯ |  |
+```ionic cordova resources``` | ◯ | cordova-res 導入済み
+```ionic cordova run``` | × | native-run 未導入のため
 ```ionic docs``` | × | Docker イメージ内のブラウザをホスト側から覗けないため
 ```ionic doctor check``` | ◯ |  |
 ```ionic doctor list``` | ◯ |  |
