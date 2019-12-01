@@ -22,3 +22,10 @@ Apple から[sourcekit-lsp](https://github.com/apple/sourcekit-lsp) が正式リ
 3. Visual Studio Code のRemote 表示から手順２のコンテナに接続する
 4. Docker コンテナにリモート接続されるので、ガイドに従って初期設定する
 5. Visual Studio Code 拡張機能から"VSIX からのインストール" をクリックし、```/root/sourcekit-lsp-vscode-dev.vsix``` をインストールする
+
+
+
+## More Document
+下記にもまとめていくので併せてご確認ください。
+
+* [SwiftREPLInDocker の使い方](https://mokumokulog.netlify.com/tech/20191201090741)
