@@ -2,7 +2,7 @@
 FROM alpine:3.10.3 AS fetcher
 RUN apk add git
 
-ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2019-11-30-a
+ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2019-12-02-a
 RUN cd /tmp \
     && git clone --depth 1 -b ${SourceKitTag} https://github.com/apple/sourcekit-lsp.git
 
@@ -11,10 +11,9 @@ RUN cd /tmp \
 # Language Server の構築
 FROM swift:5.1.2-bionic AS build-lang-server
 
-ENV LibSQLite3=3.22.0-1ubuntu0.1
 RUN apt-get -y update \
     && apt-get -y upgrade \
-    && apt-get install -y libsqlite3-dev=${LibSQLite3}
+    && apt-get install -y libsqlite3-dev
 
 COPY --from=fetcher /tmp/sourcekit-lsp /tmp
 RUN cd /tmp \
