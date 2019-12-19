@@ -2,14 +2,14 @@
 FROM alpine:3.10.3 AS fetcher
 RUN apk add git
 
-ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2019-12-15-a
+ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2019-12-18-a
 RUN cd /tmp \
     && git clone --depth 1 -b ${SourceKitTag} https://github.com/apple/sourcekit-lsp.git
 
 
 
 # Language Server の構築
-FROM swift:5.1.2-bionic AS build-lang-server
+FROM swift:5.1.3-bionic AS build-lang-server
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
@@ -22,7 +22,7 @@ RUN cd /tmp \
 
 
 # VSCode 拡張機能のビルド
-FROM node:8.16.2-alpine3.10 AS build-extension
+FROM node:8.17.0-alpine3.10 AS build-extension
 COPY --from=fetcher /tmp/sourcekit-lsp/Editors/vscode /tmp
 RUN cd /tmp \
     && npm install \
@@ -32,7 +32,7 @@ RUN cd /tmp \
 
 
 # 実行環境のビルド
-FROM swift:5.1.2-bionic
+FROM swift:5.1.3-bionic
 
 # Language Server のコピー
 COPY --from=build-lang-server /usr/bin/sourcekit-lsp /bin/sourcekit-lsp
