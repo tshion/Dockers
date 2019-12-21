@@ -1,5 +1,5 @@
 # sourcekit-lsp の取得
-FROM alpine:3.10.3 AS fetcher
+FROM alpine:3.11.0 AS fetcher
 RUN apk add git
 
 ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2019-12-18-a
@@ -22,7 +22,7 @@ RUN cd /tmp \
 
 
 # VSCode 拡張機能のビルド
-FROM node:8.17.0-alpine3.10 AS build-extension
+FROM node:8.17.0-alpine3.11 AS build-extension
 COPY --from=fetcher /tmp/sourcekit-lsp/Editors/vscode /tmp
 RUN cd /tmp \
     && npm install \
