@@ -44,7 +44,7 @@ ENV VersionCordovaRes=0.9.0
 ENV VersionIonic=5.4.16
 
 # Node パッケージの設定
-RUN yarn global add @capacitor/cli@${VersionCapacitor} cordova@${VersionCordova} cordova-res@${VersionCordovaRes} @ionic/cli@${VersionIonic} --exact \
+RUN yarn global add @capacitor/cli@${VersionCapacitor} cordova@${VersionCordova} cordova-res@${VersionCordovaRes} ionic@${VersionIonic} --exact \
     ## Ionic でYarn の利用を既定値にする
     && ionic config set -g yarn true \
     && ionic config set -g npmClient yarn
