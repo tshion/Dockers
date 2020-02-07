@@ -2,7 +2,7 @@
 FROM alpine:3.11.3 AS fetcher
 RUN apk add git
 
-ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2020-01-29-a
+ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2020-02-06-a
 RUN cd /tmp \
     && git clone --depth 1 -b ${SourceKitTag} https://github.com/apple/sourcekit-lsp.git
 
@@ -22,7 +22,7 @@ RUN cd /tmp \
 
 
 # VSCode 拡張機能のビルド
-FROM node:12.14.1-alpine3.11 AS build-extension
+FROM node:12.15.0-alpine3.11 AS build-extension
 COPY --from=fetcher /tmp/sourcekit-lsp/Editors/vscode /tmp
 RUN cd /tmp \
     && npm install \
