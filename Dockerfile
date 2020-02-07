@@ -1,5 +1,5 @@
 # Node イメージの指定
-FROM node:12.14.1-alpine3.11
+FROM node:12.15.0-alpine3.11
 
 # 作業フォルダーのマウントポイントの設定
 VOLUME [ "/home/worker" ]
@@ -41,7 +41,7 @@ ENV VersionCordova=9.0.0
 ENV VersionCordovaRes=0.9.0
 
 # Ionic CLI バージョンの指定
-ENV VersionIonic=6.0.0
+ENV VersionIonic=6.0.1
 
 # Node パッケージの設定
 RUN yarn global add @capacitor/cli@${VersionCapacitor} cordova@${VersionCordova} cordova-res@${VersionCordovaRes} @ionic/cli@${VersionIonic} --exact \
