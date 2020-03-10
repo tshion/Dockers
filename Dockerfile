@@ -7,14 +7,6 @@ VOLUME [ "/home/worker" ]
 # 実行コマンドの設定
 ENTRYPOINT [ "/bin/sh", "--login" ]
 
-# シェル環境変数の設定
-RUN echo <<EOF > ~/.profile \
-    # ionic serve 時のホストアドレス変更
-    export IONIC_CMDOPTS_SERVE_ADDRESS=0.0.0.0 \
-    # ionic serve 時にブラウザ起動を抑制する
-    export IONIC_CMDOPTS_SERVE_OPEN=0 \
-    EOF
-
 # 公開するポートの設定
 #  4200: ng e2e
 #  8100: ionic serve
@@ -22,6 +14,17 @@ RUN echo <<EOF > ~/.profile \
 # 35729: liveload
 # 53703: dev logger
 EXPOSE 4200 8100 9876 35729 53703
+
+RUN \
+    # シェル環境変数の設定
+    echo <<EOF > ~/.profile \
+        # ionic serve 時のホストアドレス変更
+        export IONIC_CMDOPTS_SERVE_ADDRESS=0.0.0.0 \
+        # ionic serve 時にブラウザ起動を抑制する
+        export IONIC_CMDOPTS_SERVE_OPEN=0 \
+    EOF \
+    # Yarn 設定
+    && yarn config set ignore-optional true --global
 
 # C++, Python の設定
 # ベースイメージと同じものを採用
