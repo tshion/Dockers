@@ -19,7 +19,7 @@ RUN \
     # シェル環境変数の設定
     echo <<EOF > ~/.profile \
         # ionic serve 時のホストアドレス変更
-        export IONIC_CMDOPTS_SERVE_ADDRESS=0.0.0.0 \
+        export IONIC_CMDOPTS_SERVE_HOST=0.0.0.0 \
         # ionic serve 時にブラウザ起動を抑制する
         export IONIC_CMDOPTS_SERVE_OPEN=0 \
     EOF \
