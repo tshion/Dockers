@@ -35,7 +35,7 @@ RUN apk add --no-cache \
     python
 
 # Capacitor バージョンの指定
-ENV VersionCapacitor=1.5.1
+ENV VersionCapacitor=1.5.2
 
 # Cordova バージョンの指定
 ENV VersionCordova=9.0.0
