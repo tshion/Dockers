@@ -32,7 +32,7 @@ RUN cd /tmp \
 
 
 # 実行環境のビルド
-FROM swift:5.2-bionic
+FROM swift:5.2.1-bionic
 
 # Language Server のコピー
 COPY --from=build-lang-server /usr/bin/sourcekit-lsp /bin/sourcekit-lsp
