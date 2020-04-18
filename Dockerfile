@@ -2,14 +2,14 @@
 FROM alpine:3.11.5 AS fetcher
 RUN apk add git
 
-ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2020-04-13-a
+ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2020-04-17-a
 RUN cd /tmp \
     && git clone --depth 1 -b ${SourceKitTag} https://github.com/apple/sourcekit-lsp.git
 
 
 
 # Language Server の構築
-FROM swift:5.2.1-bionic AS build-lang-server
+FROM swift:5.2.2-bionic AS build-lang-server
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
@@ -32,7 +32,7 @@ RUN cd /tmp \
 
 
 # 実行環境のビルド
-FROM swift:5.2.1-bionic
+FROM swift:5.2.2-bionic
 
 # Language Server のコピー
 COPY --from=build-lang-server /usr/bin/sourcekit-lsp /bin/sourcekit-lsp
