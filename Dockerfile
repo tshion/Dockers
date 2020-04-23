@@ -41,7 +41,7 @@ ENV VersionCapacitor=2.0.1
 ENV VersionCordova=9.0.0
 
 # Cordova Res バージョンの指定
-ENV VersionCordovaRes=0.12.2
+ENV VersionCordovaRes=0.13.0
 
 # Ionic CLI バージョンの指定
 ENV VersionIonic=6.6.0
