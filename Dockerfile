@@ -35,16 +35,16 @@ RUN apk add --no-cache \
     python
 
 # Capacitor バージョンの指定
-ENV VersionCapacitor=2.0.1
+ENV VersionCapacitor=2.0.2
 
 # Cordova バージョンの指定
 ENV VersionCordova=9.0.0
 
 # Cordova Res バージョンの指定
-ENV VersionCordovaRes=0.13.1
+ENV VersionCordovaRes=0.14.0
 
 # Ionic CLI バージョンの指定
-ENV VersionIonic=6.6.0
+ENV VersionIonic=6.7.0
 
 # Node パッケージの設定
 RUN yarn global add @capacitor/cli@${VersionCapacitor} cordova@${VersionCordova} cordova-res@${VersionCordovaRes} @ionic/cli@${VersionIonic} --exact \
