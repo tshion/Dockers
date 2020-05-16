@@ -4,6 +4,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build AngularREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-angular-repl",
+                "./AngularREPL"
+            ],
+            "group": "build"
+        },
+        {
             "label": "Build ImageResizer",
             "type": "shell",
             "command": "docker",
@@ -38,6 +50,24 @@
                 "./VuePressREPL"
             ],
             "group": "build"
+        },
+        {
+            "label": "Run AngularREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-p",
+                "4200:4200",
+                "-v",
+                "${workspaceFolder}/AngularREPL/mount:/home/worker",
+                "dev-angular-repl"
+            ],
+            "dependsOn": [
+                "Build AngularREPL"
+            ]
         },
         {
             "label": "Run ImageResizer",
