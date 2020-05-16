@@ -16,6 +16,18 @@
             "group": "build"
         },
         {
+            "label": "Build IonicREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-ionic-repl",
+                "./IonicREPL"
+            ],
+            "group": "build"
+        },
+        {
             "label": "Build VuePressREPL",
             "type": "shell",
             "command": "docker",
@@ -41,6 +53,32 @@
             ],
             "dependsOn": [
                 "Build ImageResizer"
+            ]
+        },
+        {
+            "label": "Run IonicREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-p",
+                "4200:4200",
+                "-p",
+                "8100:8100",
+                "-p",
+                "9876:9876",
+                "-p",
+                "35729:35729",
+                "-p",
+                "53703:53703",
+                "-v",
+                "${workspaceFolder}/IonicREPL/mount:/home/worker",
+                "dev-ionic-repl"
+            ],
+            "dependsOn": [
+                "Build IonicREPL"
             ]
         },
         {
