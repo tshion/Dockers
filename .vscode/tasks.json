@@ -4,6 +4,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build SwiftREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-swift-repl",
+                "./SwiftREPL"
+            ],
+            "group": "build"
+        },
+        {
             "label": "Build VuePressREPL",
             "type": "shell",
             "command": "docker",
@@ -14,6 +26,22 @@
                 "./VuePressREPL"
             ],
             "group": "build"
+        },
+        {
+            "label": "Run SwiftREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-v",
+                "${workspaceFolder}/SwiftREPL/mount:/home/worker",
+                "dev-swift-repl"
+            ],
+            "dependsOn": [
+                "Build SwiftREPL"
+            ]
         },
         {
             "label": "Run VuePressREPL",
