@@ -1,31 +1,63 @@
 # SwiftREPLInDocker
-Docker コンテナ内にSwift 関連の下記を整備したイメージの開発リポジトリ。
-イメージは[Docker Hub](https://hub.docker.com/r/tshion/swift-repl) から入手出来ます。
+You can use these features in a docker container.
 
-* Language Server
-* Visual Studio Code 拡張機能
-* ビルド環境
+* swift commands
+* Visual Studio Code Extensions for [sourcekit-lsp]
 
-Apple から[sourcekit-lsp](https://github.com/apple/sourcekit-lsp) が正式リリースされれば、
-全て機能を公式リリースのもので賄えるようになるので、**それまでのつなぎとしてお使いください。**
+If Apple release the extension, this image will be needless.
 
 
+## Quick Start
+Parameter | Description
+--- | ---
+```[mount path]``` | Host OS's directory to mount to docker container.
+```[tag]``` | Docker image tag.<br />Please check [DockerHub/Tags].
 
-## Quick Start(導入から利用まで)
-0. 前準備
-    * [Docker Desktop](https://docs.docker.com/v17.09/engine/installation/) をインストールする
-    * [Visual Studio Code](https://code.visualstudio.com/Download) と下記拡張機能をインストールする
-        * [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-        * [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-1. ```docker pull tshion/swift-repl``` を実行する
-2. Visual Studio Code のDocker 表示で手順１のイメージを右クリックして"Run Interactive" を実行する
-3. Visual Studio Code のRemote 表示から手順２のコンテナに接続する
-4. Docker コンテナにリモート接続されるので、ガイドに従って初期設定する
-5. Visual Studio Code 拡張機能から"VSIX からのインストール" をクリックし、```/root/sourcekit-lsp-vscode-dev.vsix``` をインストールする
+### Case1: Attach Visual Studio Code
+* Docker Desktop is already installed
+* Visual Studio Code is already installed
+    * [Docker Extension] is already installed
+    * [Remote Development Extension] is already installed
+
+When the above is ready, please try these.
+
+1. Run this.
+``` bash
+docker run --rm --it -v [mount path]:/home/worker tshion/swift-repl:[tag]
+```
+2. Open "Docker" tab in Visual Studio Code
+3. Select 2's container, and right click and select "Attach Visual Studio Code"
+4. Do initialize settings
+5. Open "Extension" tab in 4's Visual Studio Code, and install from vsix of ```/root/sourcekit-lsp-vscode-dev.vsix```
 
 
+## Features
+In detail, I would like you to check [Dockerfile](./Dockerfile).
 
-## More Document
-下記にもまとめていくので併せてご確認ください。
 
-* [SwiftREPLInDocker の使い方](https://mokumokulog.netlify.com/tech/20191201090741)
+## Links
+### Blogs
+* [SwiftREPLInDocker の使い方](https://mokumokulog.netlify.app/tech/20191201090741)
+
+### Products
+* [DockerHub]
+* [GitHub]
+
+### References
+* [alpine]
+* [Docker Extension]
+* [node]
+* [Remote Development Extension]
+* [sourcekit-lsp]
+* [swift]
+
+
+[alpine]: https://hub.docker.com/_/alpine
+[Docker Extension]: https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker
+[DockerHub]: https://hub.docker.com/r/tshion/swift-repl/
+[DockerHub/Tags]: https://hub.docker.com/r/tshion/swift-repl/tags
+[GitHub]: https://github.com/TentaShion/Dockers/SwiftREPL
+[node]: https://hub.docker.com/_/node
+[Remote Development Extension]: https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+[sourcekit-lsp]: https://github.com/apple/sourcekit-lsp
+[swift]: https://hub.docker.com/_/swift
