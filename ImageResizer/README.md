@@ -1,15 +1,45 @@
 # ImageResizerOnDocker
-画像リサイズをするDocker イメージ
+You can resize images in a docker container.
 
 
+## Quick Start
+Parameter | Description
+--- | ---
+```[mount path]``` | Host OS's directory to mount to docker container.
+```[tag]``` | Docker image tag.<br />Please check [DockerHub/Tags].
 
-## 使い方
-インタラクティブモードでDocker を起動し、リサイズしたい画像フォルダーをマウントして、下記のコマンドを入力してください。
-与えられた画像より小さくリサイズするので、大きさに注意してください。
+### Case1: ```docker run```
+``` bash
+docker run --rm --it -v [mount path]:/home/worker tshion/image-resizer:[tag]
+```
 
-コマンド | 用途 | 備考
+If you want to exit, please run ```exit``` command.
+
+
+## Features
+In detail, I would like you to check [Dockerfile](./Dockerfile).
+
+### Commands
+Want to do | Commands | Note
 --- | --- | ---
-```node ../icon-fav.js | favion の作成 | 元画像はicon フォルダーに配置してください
-```node ../icon-ios.js | ios 用アイコンの作成 | 元画像はicon フォルダーに配置してください
-```node ../icon-pwa.js | PWA 用アイコンの作成 | 元画像はicon フォルダーに配置してください
-```node ../index.js | モバイル用の解像度別画像の作成 |  |
+Resize image to favicon size | ```node ../icon-fav.js``` | Please locate original image at ```icon/```
+Resize image to iOS icon size | ```node ../icon-ios.js``` | Please locate original image at ```icon/```
+Resize image to PWA icon size | ```node ../icon-pwa.js``` | Please locate original image at ```icon/```
+Resize image to mobile app size | ```node ../index.js``` | 
+
+
+## Links
+### Products
+* [DockerHub]
+* [GitHub]
+
+### References
+* [ImageMagick]
+* [node]
+
+
+[DockerHub]: https://hub.docker.com/r/tshion/image-resizer/
+[DockerHub/Tags]: https://hub.docker.com/r/tshion/image-resizer/tags
+[GitHub]: https://github.com/TentaShion/Dockers/ImageResizer
+[ImageMagick]: https://imagemagick.org/index.php
+[node]: https://hub.docker.com/_/node/
