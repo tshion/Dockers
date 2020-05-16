@@ -1,13 +1,27 @@
-ARG VersionNode=8.11.2-alpine
-ARG VersionAngularCLI=6.0.3
+# Node イメージの指定
+FROM node:14.2.0-alpine3.11
 
-FROM node:${VersionNode}
+# 作業フォルダーのマウントポイントの設定
+VOLUME [ "/home/worker" ]
 
-COPY ./command/my-serve /usr/local/bin/my-serve
-RUN npm install -g @angular/cli@${VersionAngularCLI}
+# 実行コマンドの設定
+ENTRYPOINT [ "/bin/sh", "--login" ]
+
+# 公開するポートの設定
+#  4200: ng serve
 EXPOSE 4200
 
-VOLUME [ "/work" ]
-WORKDIR /work
+RUN \
+    # Yarn 設定
+    yarn config set ignore-optional true --global
 
-ENTRYPOINT ["/bin/sh"]
+# Angular バージョンの指定
+ENV VersionAngular=9.1.6
+
+# Node パッケージの設定
+RUN yarn global add @angular/cli@${VersionAngular} --exact \
+    ## Angular でYarn の利用を既定値にする
+    && ng config --global cli.packageManager yarn
+
+# 作業フォルダーに変更
+WORKDIR /home/worker
