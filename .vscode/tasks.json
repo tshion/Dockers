@@ -4,6 +4,42 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build AngularREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-angular-repl",
+                "./AngularREPL"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Build ImageResizer",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-image-resizer",
+                "./ImageResizer"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Build IonicREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-ionic-repl",
+                "./IonicREPL"
+            ],
+            "group": "build"
+        },
+        {
             "label": "Build SwiftREPL",
             "type": "shell",
             "command": "docker",
@@ -26,6 +62,66 @@
                 "./VuePressREPL"
             ],
             "group": "build"
+        },
+        {
+            "label": "Run AngularREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-p",
+                "4200:4200",
+                "-v",
+                "${workspaceFolder}/AngularREPL/mount:/home/worker",
+                "dev-angular-repl"
+            ],
+            "dependsOn": [
+                "Build AngularREPL"
+            ]
+        },
+        {
+            "label": "Run ImageResizer",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-v",
+                "${workspaceFolder}/ImageResizer/mount:/home/worker",
+                "dev-image-resizer"
+            ],
+            "dependsOn": [
+                "Build ImageResizer"
+            ]
+        },
+        {
+            "label": "Run IonicREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-p",
+                "4200:4200",
+                "-p",
+                "8100:8100",
+                "-p",
+                "9876:9876",
+                "-p",
+                "35729:35729",
+                "-p",
+                "53703:53703",
+                "-v",
+                "${workspaceFolder}/IonicREPL/mount:/home/worker",
+                "dev-ionic-repl"
+            ],
+            "dependsOn": [
+                "Build IonicREPL"
+            ]
         },
         {
             "label": "Run SwiftREPL",
