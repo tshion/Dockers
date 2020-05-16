@@ -7,10 +7,18 @@
         {
             "type": "chrome",
             "request": "launch",
+            "name": "4200 by Chrome",
+            "url": "http://localhost:4200",
+            // %%project path%% はデバッグ対象のプロジェクトディレクトリーを設定する
+            "webRoot": "${workspaceFolder}/%%project path%%/mount/%%project path%%"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
             "name": "8080 by Chrome",
             "url": "http://localhost:8080",
             // %%project path%% はデバッグ対象のプロジェクトディレクトリーを設定する
-            "webRoot": "${workspaceFolder}/mount/%%project path%%"
+            "webRoot": "${workspaceFolder}/%%project path%%/mount/%%project path%%"
         }
     ]
 }

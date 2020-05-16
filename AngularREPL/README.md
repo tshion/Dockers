@@ -41,5 +41,5 @@ In detail, I would like you to check [Dockerfile](./Dockerfile).
 [@angular/cli]: https://www.npmjs.com/package/@angular/cli
 [DockerHub]: https://hub.docker.com/r/tshion/angular-repl/
 [DockerHub/Tags]: https://hub.docker.com/r/tshion/angular-repl/tags
-[GitHub]: https://github.com/TentaShion/AngularREPLInDocker
+[GitHub]: https://github.com/TentaShion/Dockers/AngularREPL
 [node]: https://hub.docker.com/_/node/
