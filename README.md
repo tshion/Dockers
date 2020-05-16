@@ -27,6 +27,8 @@ In detail, I would like you to check [Dockerfile](./Dockerfile).
 
 ## Links
 ### Blogs
+* [AngularREPLInDocker の使い方](https://mokumokulog.netlify.app//tech/20180506205614)
+
 ### Products
 * [DockerHub]
 * [GitHub]
@@ -39,5 +41,5 @@ In detail, I would like you to check [Dockerfile](./Dockerfile).
 [@angular/cli]: https://www.npmjs.com/package/@angular/cli
 [DockerHub]: https://hub.docker.com/r/tshion/angular-repl/
 [DockerHub/Tags]: https://hub.docker.com/r/tshion/angular-repl/tags
-[GitHub]: https://github.com/TentaShion/AngularCLIOnDocker
+[GitHub]: https://github.com/TentaShion/AngularREPLInDocker
 [node]: https://hub.docker.com/_/node/
