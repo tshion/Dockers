@@ -1,0 +1,35 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Test Build Docker",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-mobile-image-resizer",
+                "."
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Test Run Docker",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-v",
+                "${workspaceFolder}/workspace:/home/worker",
+                "dev-mobile-image-resizer"
+            ],
+            "dependsOn": [
+                "Test Build Docker"
+            ]
+        }
+    ]
+}
