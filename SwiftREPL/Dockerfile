@@ -22,7 +22,7 @@ RUN cd /tmp \
 
 
 # VSCode 拡張機能のビルド
-FROM node:12.16.3-alpine3.11 AS build-extension
+FROM node:14.2.0-alpine3.11 AS build-extension
 COPY --from=fetcher /tmp/sourcekit-lsp/Editors/vscode /tmp
 RUN cd /tmp \
     && npm install \
@@ -34,8 +34,14 @@ RUN cd /tmp \
 # 実行環境のビルド
 FROM swift:5.2.3-bionic
 
+# 作業フォルダーのマウントポイントの設定
+VOLUME [ "/home/worker" ]
+
 # Language Server のコピー
 COPY --from=build-lang-server /usr/bin/sourcekit-lsp /bin/sourcekit-lsp
 
 # Visual Studio Code 拡張機能のコピー
 COPY --from=build-extension /tmp/out/sourcekit-lsp-vscode-dev.vsix /root/
+
+# 作業フォルダーに変更
+WORKDIR /home/worker
