@@ -1,5 +1,5 @@
 # Node イメージの指定
-FROM node:8.11.2-alpine
+FROM node:14.2.0-alpine3.11
 
 # 作業フォルダーのマウントポイントの設定
 VOLUME [ "/home/worker" ]
@@ -15,7 +15,7 @@ RUN \
     yarn config set ignore-optional true --global
 
 # VuePress バージョンの指定
-ENV VersionVuePress=0.12.0
+ENV VersionVuePress=1.5.0
 
 # Node パッケージの設定
 RUN yarn global add vuepress@${VersionVuePress} --exact

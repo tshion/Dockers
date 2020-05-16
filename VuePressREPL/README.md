@@ -33,6 +33,7 @@ In detail, I would like you to check [Dockerfile](./Dockerfile).
 ### References
 * [node]
 * [VuePress]
+    * [npm](https://www.npmjs.com/package/vuepress)
 
 
 [DockerHub]: https://hub.docker.com/r/tshion/vuepress-repl/
