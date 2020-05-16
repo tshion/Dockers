@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build VuePressREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "build",
+                "-t",
+                "dev-vuepress-repl",
+                "./VuePressREPL"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Run VuePressREPL",
+            "type": "shell",
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-it",
+                "-p",
+                "8080:8080",
+                "-v",
+                "${workspaceFolder}/VuePressREPL/mount:/home/worker",
+                "dev-vuepress-repl"
+            ],
+            "dependsOn": [
+                "Build VuePressREPL"
+            ]
+        }
+    ]
+}
