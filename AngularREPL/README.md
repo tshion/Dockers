@@ -27,7 +27,7 @@ In detail, I would like you to check [Dockerfile](./Dockerfile).
 
 ## Links
 ### Blogs
-* [AngularREPLInDocker の使い方](https://mokumokulog.netlify.app//tech/20180506205614)
+* [AngularREPLInDocker の使い方](https://mokumokulog.netlify.app/tech/20180506205614)
 
 ### Products
 * [DockerHub]
