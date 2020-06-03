@@ -41,7 +41,7 @@ ENV VersionCordova=9.0.0
 ENV VersionCordovaRes=0.14.0
 
 # Ionic CLI バージョンの指定
-ENV VersionIonic=6.9.3
+ENV VersionIonic=6.10.0
 
 # Node パッケージの設定
 RUN yarn global add cordova@${VersionCordova} cordova-res@${VersionCordovaRes} @ionic/cli@${VersionIonic} --exact \
