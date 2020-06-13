@@ -26,14 +26,6 @@ RUN \
     # Yarn 設定
     && yarn config set ignore-optional true --global
 
-# C++, Python の設定
-# ベースイメージと同じものを採用
-# https://github.com/nodejs/docker-node/blob/f8c22aeb318ec3df876f8271b9b8a86005f0f53d/10/alpine/Dockerfile
-RUN apk add --no-cache \
-    g++ \
-    make \
-    python
-
 # Cordova バージョンの指定
 ENV VersionCordova=9.0.0
 
