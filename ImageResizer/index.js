@@ -8,11 +8,12 @@ const ruleApple = [
     { ratio: 3.0, name: '@3x' },
 ]
 const ruleDroid = [
-    { ratio: 1.0, name: 'mdpi' },
-    { ratio: 1.5, name: 'hdpi' },
-    { ratio: 2.0, name: 'xhdpi' },
-    { ratio: 3.0, name: 'xxhdpi' },
-    { ratio: 4.0, name: 'xxxhdpi' },
+    { ratio: 0.75, name: 'ldpi' },
+    { ratio: 1.00, name: 'mdpi' },
+    { ratio: 1.50, name: 'hdpi' },
+    { ratio: 2.00, name: 'xhdpi' },
+    { ratio: 3.00, name: 'xxhdpi' },
+    { ratio: 4.00, name: 'xxxhdpi' },
 ]
 
 const dirApple = './ios'
