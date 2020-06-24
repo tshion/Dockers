@@ -30,7 +30,7 @@ RUN \
 ENV VersionCordova=9.0.0
 
 # Cordova Res バージョンの指定
-ENV VersionCordovaRes=0.15.0
+ENV VersionCordovaRes=0.15.1
 
 # Ionic CLI バージョンの指定
 ENV VersionIonic=6.10.1
