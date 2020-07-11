@@ -2,7 +2,7 @@
 FROM alpine:3.12.0 AS fetcher
 RUN apk add git
 
-ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2020-06-29-a
+ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2020-07-10-a
 RUN cd /tmp \
     && git clone --depth 1 -b ${SourceKitTag} https://github.com/apple/sourcekit-lsp.git
 
