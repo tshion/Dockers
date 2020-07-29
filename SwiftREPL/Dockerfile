@@ -22,7 +22,7 @@ RUN cd /tmp \
 
 
 # VSCode 拡張機能のビルド
-FROM node:14.5.0-alpine3.12 AS build-extension
+FROM node:14.6.0-alpine3.12 AS build-extension
 COPY --from=fetcher /tmp/sourcekit-lsp/Editors/vscode /tmp
 RUN cd /tmp \
     && npm install \
