@@ -27,7 +27,7 @@ RUN \
     && yarn config set ignore-optional true --global
 
 # Cordova バージョンの指定
-ENV VersionCordova=9.0.0
+ENV VersionCordova=10.0.0
 
 # Cordova Res バージョンの指定
 ENV VersionCordovaRes=0.15.1
