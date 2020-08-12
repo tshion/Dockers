@@ -9,7 +9,7 @@ RUN cd /tmp \
 
 
 # Language Server の構築
-FROM swift:5.2.4-bionic AS build-lang-server
+FROM swift:5.2.5-bionic AS build-lang-server
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
