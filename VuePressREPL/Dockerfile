@@ -15,7 +15,7 @@ RUN \
     yarn config set ignore-optional true --global
 
 # VuePress バージョンの指定
-ENV VersionVuePress=1.5.4
+ENV VersionVuePress=1.6.0
 
 # Node パッケージの設定
 RUN yarn global add vuepress@${VersionVuePress} --exact
