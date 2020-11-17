@@ -26,7 +26,6 @@ FROM node:14.15.1-alpine3.12 AS build-extension
 COPY --from=fetcher /tmp/sourcekit-lsp/Editors/vscode /tmp
 RUN cd /tmp \
     && npm install \
-    && npm run postinstall \
     && ./node_modules/.bin/vsce package -o ./out/sourcekit-lsp-vscode-dev.vsix
 
 
