@@ -9,7 +9,7 @@ RUN cd /tmp \
 
 
 # Language Server の構築
-FROM swift:5.3.3-bionic AS build-lang-server
+FROM swift:5.4.0-bionic AS build-lang-server
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
@@ -31,7 +31,7 @@ RUN cd /tmp \
 
 
 # 実行環境のビルド
-FROM swift:5.3.3-bionic
+FROM swift:5.4.0-bionic
 
 # 作業フォルダーのマウントポイントの設定
 VOLUME [ "/home/worker" ]
