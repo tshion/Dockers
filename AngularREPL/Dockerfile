@@ -16,7 +16,7 @@ RUN \
     yarn config set ignore-optional true --global
 
 # Angular バージョンの指定
-ENV VersionAngular=12.0.5
+ENV VersionAngular=12.1.0
 
 # Node パッケージの設定
 RUN yarn global add @angular/cli@${VersionAngular} --exact \
