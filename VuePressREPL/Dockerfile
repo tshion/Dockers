@@ -1,5 +1,5 @@
 # Node イメージの指定
-FROM node:14.17.4-alpine3.14
+FROM node:14.17.5-alpine3.14
 
 # 作業フォルダーのマウントポイントの設定
 VOLUME [ "/home/worker" ]
