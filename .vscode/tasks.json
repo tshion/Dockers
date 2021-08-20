@@ -10,7 +10,7 @@
             "args": [
                 "build",
                 "-t",
-                "dev-angular-repl",
+                "tshion/angular-repl:${input:ngreplTagName}",
                 "./AngularREPL"
             ],
             "group": "build"
@@ -22,7 +22,7 @@
             "args": [
                 "build",
                 "-t",
-                "dev-image-resizer",
+                "tshion/image-resizer:${input:imgresizerTagName}",
                 "./ImageResizer"
             ],
             "group": "build"
@@ -34,7 +34,7 @@
             "args": [
                 "build",
                 "-t",
-                "dev-ionic-repl",
+                "tshion/ionic-repl:${input:ionreplTagName}",
                 "./IonicREPL"
             ],
             "group": "build"
@@ -46,7 +46,7 @@
             "args": [
                 "build",
                 "-t",
-                "dev-swift-repl",
+                "tshion/swift-repl:${input:swreplTagName}",
                 "./SwiftREPL"
             ],
             "group": "build"
@@ -58,7 +58,7 @@
             "args": [
                 "build",
                 "-t",
-                "dev-vuepress-repl",
+                "tshion/vuepress-repl:${input:vpreplTagName}",
                 "./VuePressREPL"
             ],
             "group": "build"
@@ -75,7 +75,7 @@
                 "4200:4200",
                 "-v",
                 "${workspaceFolder}/AngularREPL/mount:/home/worker",
-                "dev-angular-repl"
+                "tshion/angular-repl:dev"
             ],
             "dependsOn": [
                 "Build AngularREPL"
@@ -91,7 +91,7 @@
                 "-it",
                 "-v",
                 "${workspaceFolder}/ImageResizer/mount:/home/worker",
-                "dev-image-resizer"
+                "tshion/image-resizer:dev"
             ],
             "dependsOn": [
                 "Build ImageResizer"
@@ -117,7 +117,7 @@
                 "53703:53703",
                 "-v",
                 "${workspaceFolder}/IonicREPL/mount:/home/worker",
-                "dev-ionic-repl"
+                "tshion/ionic-repl:dev"
             ],
             "dependsOn": [
                 "Build IonicREPL"
@@ -133,7 +133,7 @@
                 "-it",
                 "-v",
                 "${workspaceFolder}/SwiftREPL/mount:/home/worker",
-                "dev-swift-repl"
+                "tshion/swift-repl:dev"
             ],
             "dependsOn": [
                 "Build SwiftREPL"
@@ -151,11 +151,43 @@
                 "8080:8080",
                 "-v",
                 "${workspaceFolder}/VuePressREPL/mount:/home/worker",
-                "dev-vuepress-repl"
+                "tshion/vuepress-repl:dev"
             ],
             "dependsOn": [
                 "Build VuePressREPL"
             ]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "imgresizerTagName",
+            "type": "promptString",
+            "description": "docker tag name",
+            "default": "dev"
+        },
+        {
+            "id": "ionreplTagName",
+            "type": "promptString",
+            "description": "docker tag name",
+            "default": "dev"
+        },
+        {
+            "id": "ngreplTagName",
+            "type": "promptString",
+            "description": "docker tag name",
+            "default": "dev"
+        },
+        {
+            "id": "swreplTagName",
+            "type": "promptString",
+            "description": "docker tag name",
+            "default": "dev"
+        },
+        {
+            "id": "vpreplTagName",
+            "type": "promptString",
+            "description": "docker tag name",
+            "default": "dev"
         }
     ]
 }
