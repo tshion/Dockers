@@ -39,7 +39,7 @@ RUN apk add --no-cache \
 ENV VersionCordova=10.0.0
 
 # Cordova Res バージョンの指定
-ENV VersionCordovaRes=0.15.3
+ENV VersionCordovaRes=0.15.4
 
 # Ionic CLI バージョンの指定
 ENV VersionIonic=6.18.1
