@@ -36,7 +36,7 @@ RUN apk add --no-cache \
     vips-dev
 
 # Cordova バージョンの指定
-ENV VersionCordova=10.0.0
+ENV VersionCordova=11.0.0
 
 # Cordova Res バージョンの指定
 ENV VersionCordovaRes=0.15.4
