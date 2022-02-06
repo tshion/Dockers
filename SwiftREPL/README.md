@@ -2,9 +2,10 @@
 You can use these features in a docker container.
 
 * swift commands
-* Visual Studio Code Extensions for [sourcekit-lsp]
+* ~~Visual Studio Code Extensions for [sourcekit-lsp]~~
 
-If Apple release the extension, this image will be needless.
+~~If Apple release the extension, this image will be needless.~~<br />
+[Swift Visual Studio Code Extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang) is released at 2021/12/24.
 
 
 ## Quick Start
@@ -28,7 +29,7 @@ docker run --rm --it -v [mount path]:/home/worker tshion/swift-repl:[tag]
 2. Open "Docker" tab in Visual Studio Code
 3. Select 2's container, and right click and select "Attach Visual Studio Code"
 4. Do initialize settings
-5. Open "Extension" tab in 4's Visual Studio Code, and install from vsix of ```/root/sourcekit-lsp-vscode-dev.vsix```
+~~5. Open "Extension" tab in 4's Visual Studio Code, and install from vsix of ```/root/sourcekit-lsp-vscode-dev.vsix```~~
 
 
 ## Features
