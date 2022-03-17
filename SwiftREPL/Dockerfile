@@ -1,5 +1,5 @@
 # sourcekit-lsp の取得
-FROM alpine:3.15 AS fetcher
+FROM alpine:3.15.1 AS fetcher
 RUN apk add git
 
 ENV SourceKitTag=swift-DEVELOPMENT-SNAPSHOT-2022-03-13-a
