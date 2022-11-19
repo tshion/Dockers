@@ -9,7 +9,7 @@ RUN cd /tmp \
 
 
 # Language Server の構築
-FROM swift:5.7.0 AS build-lang-server
+FROM swift:5.7.1 AS build-lang-server
 
 RUN apt-get -y update \
     && apt-get -y upgrade \
@@ -22,7 +22,7 @@ RUN cd /tmp \
 
 
 # 実行環境のビルド
-FROM swift:5.7.0
+FROM swift:5.7.1
 
 # 作業フォルダーのマウントポイントの設定
 VOLUME [ "/home/worker" ]
